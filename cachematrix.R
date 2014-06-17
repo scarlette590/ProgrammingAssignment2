@@ -1,7 +1,7 @@
 ## Programming Assignment 2: Caching the Inverse of a Matrix
 ## By scarlette590
 
-
+3328cbe61030caa46ed59304969044e8dc12aab9
 
 ## Example of usage:
 ##
@@ -31,14 +31,14 @@
 ## 4.get the value of the matrix inverse
 
 makeCacheMatrix <- function(x = matrix()) {
-        inv <- NULL											#initialize the inverse to NULL
-        set <- function(y) {								#function to set the value of the matrix
-                x <<- y										
-                inverse <<- NULL							
+        inv <- NULL                                         #initialize the inverse to NULL
+        set <- function(y) {                                #function to set the value of the matrix
+                x <<- y                                     
+                inverse <<- NULL                            
         }
-        get <- function() x									#function to return the value of the matrix
-        setinverse <- function(inverse) inv <<- inverse		#function to set the value of the inverse
-        getinverse <- function() inv						#function to return the value of the inverse
+        get <- function() x                                 #function to return the value of the matrix
+        setinverse <- function(inverse) inv <<- inverse     #function to set the value of the inverse
+        getinverse <- function() inv                        #function to return the value of the inverse
         list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
@@ -49,13 +49,13 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Returns a matrix that is the inverse of the input 'x'
 
 cacheSolve <- function(x, ...) {   
-		inv <- x$getinverse()  					#check if the inverse has already been calculated
-		if(!is.null(inv)) {						#if the inverse is there
-				message("getting cached data")	#indicate that we are returning cached data
-				return(inv)						#return the inverse
-		}										#otherwise the inverse is not there
-		data <- x$get()							#get the original matrix data				
-		inv <- solve(data, ...)					#calculate the inverse
-		x$setinverse(inv)						#set the inverse in the special matrix
-		inv    									#return the inverse
+        inv <- x$getinverse()                   #check if the inverse has already been calculated
+        if(!is.null(inv)) {                     #if the inverse is there
+                message("getting cached data")  #indicate that we are returning cached data
+                return(inv)                     #return the inverse
+        }                                       #otherwise the inverse is not there
+        data <- x$get()                         #get the original matrix data               
+        inv <- solve(data, ...)                 #calculate the inverse
+        x$setinverse(inv)                       #set the inverse in the special matrix
+        inv                                     #return the inverse
 }
