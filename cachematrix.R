@@ -1,7 +1,7 @@
 ## Programming Assignment 2: Caching the Inverse of a Matrix
 ## By scarlette590
 
-3328cbe61030caa46ed59304969044e8dc12aab9
+
 
 ## Example of usage:
 ##
@@ -41,6 +41,8 @@ makeCacheMatrix <- function(x = matrix()) {
         getinverse <- function() inv                        #function to return the value of the inverse
         list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
+
+
 
 ## The second function calculates the inverse of the special "matrix" created with the above function "makeCacheMatrix". 
 ## However, it first checks to see if the inverse has already been calculated. 
